@@ -6,6 +6,7 @@ namespace GenericsIntro
 {
     class MyDictionary<TKey,TValue>
     {
+        internal int count;
         TKey[] _arrayKeys;
         TValue[] _arrayValues;
 
@@ -17,6 +18,9 @@ namespace GenericsIntro
             _arrayKeys = new TKey[0];
             _arrayValues = new TValue[0];
         }
+
+        public int Count { get; internal set; }
+
         public void Add(TKey key,TValue value)
         {
             _tempArrayKey = _arrayKeys; //geçici dizi
@@ -41,5 +45,7 @@ namespace GenericsIntro
             
 
         }
+       
+       
     }
 }
